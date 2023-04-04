@@ -1,0 +1,16 @@
+extends layout 
+
+
+block main-content
+    each artists in artist.artists
+        h1.page-title 
+            a(href=artists.external_urls.spotify) #{artists.name} Lyrics Library!  
+        img(src=artists.images[0].url, alt="5 boys") 
+        p.intro Tomorrow x Together are a five member group from South Korea. They have debuted on March 4, 2019 and have been gaining popularity since then. Make sure to listen to their song while going through the beauty of their lyrics through the link below.
+        a(href=artists.external_urls.spotify): button(type="button") #{artists.name} SPOTIFY
+        a(href="/lyrics"): button(type="button") GET #{artists.name} LYRICS 
+
+
+
+
+

@@ -1,0 +1,14 @@
+extends layout 
+
+block main-content
+    h1.page-title Tomorrow X Together Lyrics Library! 
+    - url = `https://ibighit.com/txt/eng/tour/act_sweet_mirage/`
+    a(href=url): button(type="button") See them live on your city!
+    div.lyrics
+        each songs in song.songs
+            div.lyricsInfo
+                img(src=songs.song_art_image_thumbnail_url, alt="album cover")
+                p.title Title: 
+                    a(href=songs.url) #{songs.title}
+                p Artist: #{songs.artist_names}
+                p Release date: #{songs.release_date_for_display}
